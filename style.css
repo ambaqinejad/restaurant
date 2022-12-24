@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Frank+Ruhl+Libre:wght@300&family=Lobster&display=swap');
+
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #222831;
+    --secondary-color: #F1F2F3;
+    --tertiary-color: #7CA15B;
+    --title-font: 'Lobster', cursive;
+    --description-font: 'Dancing Script', cursive;
+    --regular-font: 'Frank Ruhl Libre', serif;
+
+    --header-image-height-in-desktop: 80vh;
+    --header-image-height-in-mobile: var(--header-image-height-in-desktop);
+
+    --header-text-container-top: 7rem;
+    --header-text-container-left: 3rem;
+    --header-text-container-background-color: rgba(255, 255, 255, .1);
+    --header-text-container-background-blur: blur(.5rem);
+    --header-text-container-in-desktop: 30%;
+    --header-text-container-in-mobile: 60%;
+    --header-text-container-padding: 1.5rem;
+    --header-text-container-border-radius: 2rem;
+    --header-text-container-title-font-size-in-mobile: 1.8em;
+    --header-text-container-title-font-size-in-desktop: 3em;
+    --header-text-container-description-font-size-in-mobile: 1em;
+    --header-text-container-description-font-size-in-desktop: 1.2em;
+}
+
+header {
+    position: relative;
+}
+
+header .header-image {
+    width: 100%;
+    height: var(--header-image-height-in-mobile);
+    object-fit: cover;
+    object-position: bottom;
+}
+
+header .header-text-container {
+    position: absolute;
+    top: var(--header-text-container-top);
+    left: var(--header-text-container-left);
+    color: var(--secondary-color);
+    background-color: var(--header-text-container-background-color);
+    backdrop-filter: var(--header-text-container-background-blur);
+    width: var(--header-text-container-in-mobile);
+    padding: var(--header-text-container-padding);
+    border-radius: var(--header-text-container-border-radius);
+}
+
+header .header-text-container h1 {
+    font-family: var(--title-font);
+    --header-text-container-title-font-size-in-mobile: 1.8em;
+    font-size: var(--header-text-container-title-font-size-in-mobile);
+    margin-bottom: 2rem
+}
+
+header .header-text-container p {
+    font-family: var(--description-font);
+    font-size: var(--header-text-container-description-font-size-in-mobile);
+}
+
+@media (min-width: 800px) {
+    header .header-text-container {
+        width: var(--header-text-container-in-desktop);
+    }
+
+    header .header-text-container h1 {
+        font-size: var(--header-text-container-title-font-size-in-desktop);
+    }
+
+    header .header-text-container p {
+        font-size: var(--header-text-container-description-font-size-in-desktop);
+    }
+}
